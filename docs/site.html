@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>João Pedro - Currículo</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #e0e0e0;
+      background: #0a0a0a;
+      overflow-x: hidden;
+    }
+
+    /* FUNDO */
+    .stars, #cosmos {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .stars span {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      opacity: 0.7;
+      border-radius: 50%;
+      animation: move linear infinite;
+    }
+
+    @keyframes move {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(var(--x), var(--y)); }
+    }
+
+    /* CAIXA */
+    .container {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 0 25px rgba(0, 100, 255, 0.25);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      color: #4da6ff;
+    }
+
+    header p {
+      color: #aaa;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: #66b2ff;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    /* BOTÃO WHATSAPP (PROFISSIONAL) */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(37, 211, 102, 0.9);
+      color: white;
+      padding: 10px 14px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    .whatsapp-btn img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .whatsapp-btn:hover {
+      background: #25D366;
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.6);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div id="cosmos"></div>
+
+<div class="container">
+
+  <header>
+    <h1>João Pedro Bezerra da Silva</h1>
+    <p>Email: joaopedrobds04ui@gmail.com</p>
+    <p>Telefone: (11) 99468-3492</p>
+    <p>Idade: 20 anos</p>
+  </header>
+
+  <div class="section">
+    <h2>Sobre mim</h2>
+    <p>
+      Profissional proativo, prestativo e comprometido com resultados, com experiência na área administrativa e no atendimento ao cliente. Possuo boa comunicação, organização e facilidade para lidar com pessoas, buscando sempre oferecer soluções eficientes e um atendimento de qualidade. Tenho disposição para aprender, trabalhar em equipe e contribuir para o crescimento da empresa.
+  </div>
+
+  <div class="section">
+    <h2>Experiência</h2>
+
+    <p>
+      <strong>Atendente</strong><br>
+      Arcos Dourados | São Paulo - SP<br>
+      04/2025 - 04/2026
+    </p>
+
+    <p>
+      <strong>Assistente de Escritório</strong><br>
+      SERPRO | São Paulo - SP<br>
+      01/2024 - 10/2025
+    </p>
+
+  </div>
+
+  <div class="section">
+    <h2>Formação</h2>
+
+    <p><strong>Novotec</strong> - ADS (2021)</p>
+    <p><strong>Ensino Médio</strong> (2023)</p>
+    <p><strong>Inglês</strong> - Yagi (2021)</p>
+
+  </div>
+
+ <div class="section"> 
+    <h2>Habilidades</h2>
+     <p> • Atendimento ao cliente<br>
+         • Organização administrativa<br> 
+         • Pacote Office<br>
+          • Comunicação<br> 
+          • Trabalho em equipe<br> 
+          • SQL<br> 
+          • C#<br> 
+          • Exel<br>
+           • power point <br> 
+        </p>
+
+</div>
+
+<!-- BOTÃO WHATSAPP -->
+<a href="https://wa.me/5511994683492?text=Olá,%20vi%20seu%20currículo!" target="_blank" class="whatsapp-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+  Entre em contato
+</a>
+
+<script>
+  const starsContainer = document.getElementById("stars");
+
+  for (let i = 0; i < 120; i++) {
+    let star = document.createElement("span");
+
+    star.style.left = Math.random() * window.innerWidth + "px";
+    star.style.top = Math.random() * window.innerHeight + "px";
+
+    star.style.setProperty("--x", (Math.random()-0.5)*800 + "px");
+    star.style.setProperty("--y", (Math.random()-0.5)*800 + "px");
+
+    star.style.animationDuration = (Math.random()*30+30) + "s";
+
+    starsContainer.appendChild(star);
+  }
+</script>
+
+</body>
+</html>
